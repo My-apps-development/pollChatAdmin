@@ -2,8 +2,8 @@ import axios from "axios";
 
 // export const BASE_URL = "http://50.17.107.208:3004/v1";
 // export const BASE_URL = "http://54.90.21.249:8002/v1";
-export const BASE_URL = "http://localhost:8080/api/v1";
-// export const BASE_URL = "http://103.211.202.117:8080/api/v1";
+// export const BASE_URL = "http://localhost:8080/api/v1";
+export const BASE_URL = "http://103.211.202.117:8080/api/v1";
 
 // const userToken = localStorage.getItem("token");
 const userToken = localStorage.getItem("token")
