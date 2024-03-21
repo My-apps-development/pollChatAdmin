@@ -64,7 +64,7 @@ const Actions = () => {
         fetchActions()
     }, [])
 
-    console.log(actionList);
+    // console.log(actionList);
     return (
         <div>
             <AdminDashboard />
