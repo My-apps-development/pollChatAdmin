@@ -3,6 +3,7 @@ import { FiUsers } from "react-icons/fi";
 import { RiDashboardLine } from "react-icons/ri";
 import { TbReportSearch, TbLogout2 } from "react-icons/tb";
 import { MdOutlinePoll } from "react-icons/md";
+import { BsCameraReels } from "react-icons/bs";
 
 
 const SideBar = () => {
@@ -84,6 +85,38 @@ const SideBar = () => {
                 </span>
                 <span className="ml-2 text-lg tracking-wide truncate">
                   Users
+                </span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/moments"
+                className={({ isActive, isPending }) =>
+                  isPending ? "flex flex-row items-center duration-300 hover:shadow-xl hover:scale-105   pr-6" : isActive ? "flex flex-row items-center duration-300 scale-105 pr-6 bg-[#16a085] text-white shadow-xl" : ""
+                }
+              >
+                <span className="inline-flex justify-center items-center ml-4">
+                  <BsCameraReels />
+                </span>
+                <span className="ml-2 text-lg tracking-wide truncate">
+                  Moments
+                </span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/actions"
+                className={({ isActive, isPending }) =>
+                  isPending ? "flex flex-row items-center duration-300 hover:shadow-xl hover:scale-105   pr-6" : isActive ? "flex flex-row items-center duration-300 scale-105 pr-6 bg-[#16a085] text-white shadow-xl" : ""
+                }
+              >
+                <span className="inline-flex justify-center items-center ml-4">
+                  <BsCameraReels />
+                </span>
+                <span className="ml-2 text-lg tracking-wide truncate">
+                  Actions
                 </span>
               </NavLink>
             </li>
