@@ -17,6 +17,7 @@ const Dashboard = () => {
     date.setDate(today.getDate() - i);
     return date.toISOString().split('T')[0];
   });
+  
   const [userData, setUserData] = useState({
     labels: dates,
     datasets: [

@@ -10,6 +10,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Polls from './pages/dashboard/dashboard/Polls';
 import ProtectedWrapper from './utils/ProtectedWrapper';
+import Actions from './pages/dashboard/dashboard/Actions';
+import Moments from './pages/dashboard/dashboard/Moments';
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
           <Route path="/polls" element={<ProtectedWrapper><Polls /></ProtectedWrapper>} />
           <Route path="/reports" element={<ProtectedWrapper><Reports /></ProtectedWrapper>} />
           <Route path="/profile" element={<ProtectedWrapper><Profile /></ProtectedWrapper>} />
+          <Route path="/actions" element={<ProtectedWrapper><Actions /></ProtectedWrapper>} />
+          <Route path="/moments" element={<ProtectedWrapper><Moments /></ProtectedWrapper>} />
           <Route path="/login" element={<Login />} />
 
           <Route path="*" element={<PageNotFound />} />
