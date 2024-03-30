@@ -72,10 +72,10 @@ const Moments = () => {
                 <h1 className="text-3xl font-bold">Moments</h1>
                 <div className="mt-10 mb-5 mr-10">
                     <div className="text-lg">Moments List</div>
-                    <div className="float-right flex bg-[#16a085] text-white px-10 py-2 -mt-10 cursor-pointer">
+                    {/* <div className="float-right flex bg-[#16a085] text-white px-10 py-2 -mt-10 cursor-pointer">
                         <RiAddFill className="m-1 " />
                         <button className="" >Add a New User</button>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="bg-white">
@@ -105,42 +105,42 @@ const Moments = () => {
                                         <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 User
-                                                <BiFilter />
+                                                {/* <BiFilter /> */}
                                             </div>
                                         </th>
                                         <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 Moments
-                                                <BiFilter />
+                                                {/* <BiFilter /> */}
                                             </div>
                                         </th>
                                         <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 seen
-                                                <BiFilter />
+                                                {/* <BiFilter /> */}
                                             </div>
                                         </th>
                                         <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 count
-                                                <BiFilter />
+                                                {/* <BiFilter /> */}
                                             </div>
                                         </th>
                                         <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 messaged
-                                                <BiFilter />
+                                                {/* <BiFilter /> */}
 
                                             </div>
                                         </th>
 
-                                        <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
+                                        {/* <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 action
                                                 <BiFilter />
 
                                             </div>
-                                        </th>
+                                        </th> */}
 
                                         {/* <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
@@ -172,8 +172,8 @@ const Moments = () => {
                                                             <img src={moment?.momentImage} alt={moment?.momentText} className="w-24 h-24"/>
                                                         </div>
                                                     </td>
-                                                    <td className="p-2 border-r">{moment?.createdAt}</td>
-                                                    <td className="p-2 border-r">{moment?.deleteTime}</td>
+                                                    <td className="p-2 border-r">{moment?.createdAt?.split("T")[0]}</td>
+                                                    <td className="p-2 border-r">{moment?.deleteTime?.split("T")[0]}</td>
                                                     <td className="p-2 border-r">{moment?.momentText}</td>
                                                     {/* <td className="p-2 border-r">Share</td> */}
 
@@ -182,11 +182,11 @@ const Moments = () => {
                         {action === "Pending" ? <td className="p-2 border-r text-gray-500 bg-gray-100">{action}</td> : null}
                         {action === "Completed" ? <td className="p-2 border-r text-green-500 bg-green-100">{action}</td> : null} */}
 
-                                                    <td className="flex justify-center text-2xl pt-1 ">
+                                                    {/* <td className="flex justify-center text-2xl pt-1 ">
                                                         <AiOutlineEdit className="mx-4 text-green-700 cursor-pointer" />
                                                         <AiOutlineDelete className="mx-4 text-red-800 cursor-pointer" />
-                                                        {/* <MdDisabledVisible className="mx-4 text-orange-400 cursor-pointer" onClick={() => handleOpenDelete(i?.id, i?.name)} /> */}
-                                                    </td>
+                                                       
+                                                    </td> */}
                                                 </tr>
 
                                             )
@@ -220,7 +220,7 @@ const Moments = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="w-[70%] bg-white p-10">
+                        <div className="w-[100%] bg-white p-10">
                             <h1 className="text-xl">Past Week Moments</h1>
                             <Bar
 
