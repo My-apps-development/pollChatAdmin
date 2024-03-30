@@ -349,7 +349,7 @@ const Polls = () => {
                     </th>
 
 
-{/* 
+                    {/* 
                     <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                       <div className="flex items-center justify-center">
                         Action
@@ -372,11 +372,13 @@ const Polls = () => {
                         <td className="p-2 border-r">{i?._id}</td>
                         <td className="p-2 border-r">{i?.question}</td>
                         <td className="p-2 border-r">
-                          <div className="border-2 border-black m-2 ">{i?.optionA}</div>
-                          <div className="border-2 border-black m-2 ">{i?.optionB}</div>
-                          <div className="border-2 border-black m-2 ">{i?.optionC}</div>
-                          <div className="border-2 border-black m-2 ">{i?.optionD}</div>
-                          </td>
+                          
+                          {i?.optionA && <div className="border-2 border-black m-2 ">{i?.optionA}</div>}
+                          {i?.optionB && <div className="border-2 border-black m-2 ">{i?.optionB}</div>}
+                          {i?.optionC && <div className="border-2 border-black m-2 ">{i?.optionC}</div>}
+                          {i?.optionD && <div className="border-2 border-black m-2 ">{i?.optionD}</div>}
+                          
+                        </td>
                         {/* <td className="p-2 border-r">{i?.responses.map((item, index) => (
 
                           <div className="border-2 border-black m-2 " key={index}>{item}</div>
@@ -392,7 +394,7 @@ const Polls = () => {
                         {action === "In-Progress" ? <td className="p-2 border-r text-blue-500 bg-blue-100">{action}</td> : null}
                         {action === "Pending" ? <td className="p-2 border-r text-gray-500 bg-gray-100">{action}</td> : null}
                         {action === "Completed" ? <td className="p-2 border-r text-green-500 bg-green-100">{action}</td> : null}
-{/* 
+                        {/* 
                         <td className="p-2 border-r cursor-pointer">
                           <div className="flex items-center justify-center text-2xl gap-2">
                             <AiOutlineEdit className="text-green-700 cursor-pointer" onClick={() => handleOpenEdit(i?.id, i?.name, i?.email, i?.team, i?.role, i?.gender, i?.phone)} />
