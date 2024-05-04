@@ -8,8 +8,8 @@ export const BASE_URL = "http://103.211.202.117:8080/api/v1";
 // const userToken = localStorage.getItem("token");
 const userToken = localStorage.getItem("token")
 // const userRole =localStorage.getItem("role")
-// console.log('AXIOS TOKEN',userToken)
-// console.log('ROLE',JSON.parse(userRole))
+// console.log('AXIOS TOKEN',userToken)  
+// console.log('ROLE',JSON.parse(userRole))  
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,
