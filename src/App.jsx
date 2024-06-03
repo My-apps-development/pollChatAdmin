@@ -13,6 +13,7 @@ import ProtectedWrapper from './utils/ProtectedWrapper';
 import Actions from './pages/dashboard/dashboard/Actions';
 import Moments from './pages/dashboard/dashboard/Moments';
 import Music from './pages/dashboard/dashboard/Music';
+import Advertisement from './pages/dashboard/dashboard/Advertisement';
 
 function App() {
 
@@ -43,8 +44,9 @@ function App() {
           <Route path="/reports" element={<ProtectedWrapper><Reports /></ProtectedWrapper>} />
           <Route path="/profile" element={<ProtectedWrapper><Profile /></ProtectedWrapper>} />
           <Route path="/actions" element={<ProtectedWrapper><Actions /></ProtectedWrapper>} />
-          <Route path="/moments" element={<ProtectedWrapper><Moments /></ProtectedWrapper>} />
           <Route path="/musics" element={<ProtectedWrapper><Music /></ProtectedWrapper>} />
+          <Route path="/moments" element={<ProtectedWrapper><Moments /></ProtectedWrapper>} />
+          <Route path="/ads" element={<ProtectedWrapper><Advertisement /></ProtectedWrapper>} />
           <Route path="/login" element={<Login />} />
 
           <Route path="*" element={<PageNotFound />} />

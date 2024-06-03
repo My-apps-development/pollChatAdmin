@@ -142,6 +142,22 @@ const SideBar = () => {
 
             <li>
               <NavLink
+                to="/ads"
+                className={({ isActive, isPending }) =>
+                  isPending ? "flex flex-row items-center duration-300 hover:shadow-xl hover:scale-105   pr-6" : isActive ? "flex flex-row items-center duration-300 scale-105 pr-6 bg-[#16a085] text-white shadow-xl" : ""
+                }
+              >
+                <span className="inline-flex justify-center items-center ml-4">
+                  <LuMusic />
+                </span>
+                <span className="ml-2 text-lg tracking-wide truncate">
+                  Advertisement
+                </span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
                 to="/chat"
                 className={({ isActive, isPending }) =>
                   isPending ? "flex flex-row items-center duration-300 hover:shadow-xl hover:scale-105   pr-6" : isActive ? "flex flex-row items-center duration-300 scale-105 pr-6 bg-[#16a085] text-white shadow-xl" : ""
