@@ -254,10 +254,10 @@ const Users = () => {
               <input placeholder="Search" className="px-2  h-6 w-auto rounded-lg focus:outline-none" name="text" type="text" />
             </div>
 
-
+{/* 
             <div className="flex px-2 border-2 border-gray-300 rounded-lg ml-3 cursor-pointer">
               <FiFilter className="mt-1 mr-3" /> Filter
-            </div>
+            </div> */}
             <div className="flex px-2 border-2 border-gray-300 rounded-lg ml-3 cursor-pointer">
               <FaRegCalendarAlt className="mt-1 mr-3" /> Filter
             </div>
@@ -293,6 +293,20 @@ const Users = () => {
                       <div className="flex items-center justify-center">
                         Phone
                         <BiFilter />
+                      </div>
+                    </th>
+                    <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
+                      <div className="flex items-center justify-center">
+                        Followers
+                        <BiFilter />
+
+                      </div>
+                    </th>
+                    <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
+                      <div className="flex items-center justify-center">
+                        Following
+                        <BiFilter />
+
                       </div>
                     </th>
                     <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
@@ -335,6 +349,8 @@ const Users = () => {
                         <td className="p-2 border-r">{i?.name}</td>
                         <td className="p-2 border-r">{i?.email}</td>
                         <td className="p-2 border-r">{i?.phone}</td>
+                        <td className="p-2 border-r">{i?.supporters}</td>
+                        <td className="p-2 border-r">{i?.supporting}</td>
                         <td className="p-2 border-r">{Math.floor(Math.random() * (1000 - 10 + 1)) + 10}</td>
 
 
