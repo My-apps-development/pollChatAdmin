@@ -7,6 +7,8 @@ import { BsCameraReels } from "react-icons/bs";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { PiFilmReel } from "react-icons/pi";
 import { LuMusic } from "react-icons/lu";
+import { PiStickerDuotone } from "react-icons/pi";
+import { RiAdvertisementLine } from "react-icons/ri";
 
 const SideBar = () => {
   const location = useLocation()
@@ -148,10 +150,26 @@ const SideBar = () => {
                 }
               >
                 <span className="inline-flex justify-center items-center ml-4">
-                  <LuMusic />
+                  <RiAdvertisementLine />
                 </span>
                 <span className="ml-2 text-lg tracking-wide truncate">
                   Advertisement
+                </span>
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/stickers"
+                className={({ isActive, isPending }) =>
+                  isPending ? "flex flex-row items-center duration-300 hover:shadow-xl hover:scale-105   pr-6" : isActive ? "flex flex-row items-center duration-300 scale-105 pr-6 bg-[#16a085] text-white shadow-xl" : ""
+                }
+              >
+                <span className="inline-flex justify-center items-center ml-4">
+                  <PiStickerDuotone />
+                </span>
+                <span className="ml-2 text-lg tracking-wide truncate">
+                  Stickers
                 </span>
               </NavLink>
             </li>

@@ -202,8 +202,8 @@ const Music = () => {
         const formData = new FormData()
         formData.append("musicName", inputs?.musicName)
         formData.append("singer", inputs?.singerName)
-        musicFiles.forEach((file, index) => {
-            formData.append(`musicFile${index}`, file);
+        musicFiles.map((file, index) => {
+            formData.append(`files${index}`, file);
         });
 
         try {
@@ -212,6 +212,8 @@ const Music = () => {
             const res = await axiosInstance.post('/music/bulk', formData, { headers: { "Content-Type": "multipart/form-data" } });
             if (res.data.status) {
                 successMessage(`New  ${res?.data?.message} Music is Created  🎉🎉`)
+                setMusicFiles([])
+               
             } else {
                 errorMessage('Something Went Wrong While Creating Bulk Music Upload !! 😓')
             }
@@ -391,13 +393,13 @@ const Music = () => {
                                         </th>
 
 
-                                        <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
+                                        {/* <th className="p-2 border-r cursor-pointer text-sm font-semibold text-gray-500">
                                             <div className="flex items-center justify-center">
                                                 Action
                                                 <BiFilter />
 
                                             </div>
-                                        </th>
+                                        </th> */}
                                     </tr>
                                 </thead>
 
@@ -420,11 +422,11 @@ const Music = () => {
                                                 <td className="p-2 border-r">{i?.userId ? "user" : "admin"}</td>
 
 
-                                                <td className="flex justify-center text-2xl pt-1 ">
+                                                {/* <td className="flex justify-center text-2xl pt-1 ">
                                                     <AiOutlineEdit className="mx-4 text-green-700 cursor-pointer" onClick={() => handleOpenEdit(i?._id, i?.name, i?.email, i?.team, i?.role, i?.gender, i?.phone)} />
                                                     <AiOutlineDelete className="mx-4 text-red-800 cursor-pointer" onClick={() => handleOpenDelete(i?._id, i?.name)} />
-                                                    {/* <MdDisabledVisible className="mx-4 text-orange-400 cursor-pointer" onClick={() => handleOpenDelete(i?.id, i?.name)} /> */}
-                                                </td>
+                                                   
+                                                </td> */}
                                             </tr>
 
                                         </tbody>
@@ -583,7 +585,7 @@ const Music = () => {
                                         <label className=" block text-base font-medium  text-[#07074D]">
                                             Name
                                         </label>
-                                        <input type="text" name="Name" id="Name" placeholder="Name" className="w-full rounded-md border border-[#e0e0e0] bg-gray-100 py-3 px-6  text-base font-medium  text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" value={name} onChange={(e) => setSingerName(e.target.value)} />
+                                        <input type="text" name="Name" id="Name" placeholder="Name" className="w-full rounded-md border border-[#e0e0e0] bg-gray-100 py-3 px-6  text-base font-medium  text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" value={singerName} onChange={(e) => setSingerName(e.target.value)} />
                                     </div>
 
 

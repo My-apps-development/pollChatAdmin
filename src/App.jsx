@@ -14,6 +14,7 @@ import Actions from './pages/dashboard/dashboard/Actions';
 import Moments from './pages/dashboard/dashboard/Moments';
 import Music from './pages/dashboard/dashboard/Music';
 import Advertisement from './pages/dashboard/dashboard/Advertisement';
+import Stickers from './pages/dashboard/dashboard/Stickers';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/musics" element={<ProtectedWrapper><Music /></ProtectedWrapper>} />
           <Route path="/moments" element={<ProtectedWrapper><Moments /></ProtectedWrapper>} />
           <Route path="/ads" element={<ProtectedWrapper><Advertisement /></ProtectedWrapper>} />
+          <Route path="/stickers" element={<ProtectedWrapper><Stickers /></ProtectedWrapper>} />
           <Route path="/login" element={<Login />} />
 
           <Route path="*" element={<PageNotFound />} />
