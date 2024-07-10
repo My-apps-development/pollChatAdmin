@@ -57,6 +57,15 @@ const Stickers = () => {
     const createSticker = async () => {
         // e.preventDefault()
 
+        if (!inputs?.category) {
+            errorMessage("Category is Required")
+            return
+        }
+        if (!inputs?.image) {
+            errorMessage("Image is Required")
+            return
+        }
+
         const fD = new FormData()
         fD.append("category", inputs?.category)
         fD.append("image", inputs?.image)
@@ -85,13 +94,15 @@ const Stickers = () => {
     const deleteSticker = async (_id) => {
         try {
             // setLoader(true)
-            const res = await axiosInstance.delete(`/sticker/delete/${_id}`);
-            if (res.data.success) {
-                successMessage(res?.data?.message)
-                getStickers()
-                // handleCloseDelete()
-            } else {
-                errorMessage('Something Went Wrong While Deleting Stciker !! 😓')
+            if (window.confirm("Are You Sure Want to delete Sticker")) {
+                const res = await axiosInstance.delete(`/sticker/delete/${_id}`);
+                if (res.data.success) {
+                    successMessage(res?.data?.message)
+                    getStickers()
+                    // handleCloseDelete()
+                } else {
+                    errorMessage('Something Went Wrong While Deleting Stciker !! 😓')
+                }
             }
             // setLoader(false)
         } catch (error) {
