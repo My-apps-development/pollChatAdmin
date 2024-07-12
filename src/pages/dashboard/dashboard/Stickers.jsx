@@ -68,13 +68,15 @@ const Stickers = () => {
 
         const fD = new FormData()
         fD.append("category", inputs?.category)
-        fD.append("image", inputs?.image)
+        fD.append("media", inputs?.image)
 
         try {
             const response = await axiosInstance.post("/sticker/create", fD, { headers: { "Content-Type": "multipart/form-data" } })
             const data = await response?.data
             successMessage(data?.message)
+            getStickers()
             setOpen(false)
+            clearInputs()
             // setStickers(data?.stickers)
         } catch (error) {
             errorMessage(error?.response?.data?.message)
@@ -109,6 +111,14 @@ const Stickers = () => {
             errorMessage(error.message)
             // setLoader(false)
         }
+    }
+
+    const clearInputs = () => {
+        setInputs(prev => ({
+            ...prev,
+            category: "",
+            image: null
+        }))
     }
 
     console.log(stickers);

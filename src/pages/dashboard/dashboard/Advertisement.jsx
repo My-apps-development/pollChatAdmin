@@ -121,25 +121,25 @@ const Advertisement = () => {
         return newDate;
     };
 
-  
+
 
     const createad = async () => {
-        // if (!name) {
-        //     errorMessage('Enter Proper Name 😓')
-        //     return
-        // }
-        // if (!email) {
-        //     errorMessage('Enter Proper Email 😓')
-        //     return
-        // }
-        // if (!phone || phone.length !== 10) {
-        //     errorMessage('Enter Proper Phone 😓')
-        //     return
-        // }
-        // if (!password || password.length < 6) {
-        //     errorMessage('Your Password is too small 😓')
-        //     return
-        // }
+        if (!inputs?.caption) {
+            errorMessage('Enter caption 😓')
+            return
+        }
+        if (!media) {
+            errorMessage('send proper image 😓')
+            return
+        }
+        if (!inputs?.location) {
+            errorMessage('Enter location 😓')
+            return
+        }
+        if (!inputs?.expiryDate) {
+            errorMessage('expiry date required 😓')
+            return
+        }
         // if (!gender) {
         //     errorMessage('Select Gender 😓')
         //     return
@@ -166,7 +166,10 @@ const Advertisement = () => {
             // }
             const res = await axiosInstance.post('/ads/create', fD);
             if (res.data.success) {
-                successMessage(`New User ${res?.data?.user.name} is Created Successfully 🎉🎉`)
+                successMessage(`Ad is Created Successfully 🎉🎉`)
+                handleClose()
+                getUsers()
+                clearInputs()
             } else {
                 errorMessage('Something Went Wrong While Creating Users !! 😓')
             }
@@ -257,7 +260,12 @@ const Advertisement = () => {
             //   }
             const res = await axiosInstance.patch(`/ads/update?id=${_id}`, fD);
             if (res.data.success) {
-                successMessage(`${res?.data?.user.name} Updated Successfully 🎉🎉`)
+                successMessage(`Ad Updated Successfully 🎉🎉`)
+                setOpen(false)
+                setUserId("")
+                setCaption("")
+                setExpiryDate("")
+                setLocation("")
             } else {
                 errorMessage('Something Went Wrong While Updating User !! 😓')
             }
@@ -269,6 +277,16 @@ const Advertisement = () => {
             errorMessage(error?.response?.data?.message)
             setLoader(false)
         }
+    }
+
+    const clearInputs = () => {
+        setInputs(prev => ({
+            ...prev,
+            userId: "",
+            caption: "",
+            location: "",
+            expiryDate: ""
+        }))
     }
 
 
@@ -387,7 +405,7 @@ const Advertisement = () => {
                                                     <td className="p-2 border-r">{action?.likeCount}</td>
 
                                                     <td className="p-2 border-r">
-                                                        <img src={action?.media} alt={action?._id} className="w-40 rounded-lg h-32 object-cover object-center"/>
+                                                        <img src={action?.media} alt={action?._id} className="w-40 rounded-lg h-32 object-cover object-center" />
                                                     </td>
                                                     <td className="p-2 border-r">{action?.caption}</td>
                                                     <td className="p-2 border-r">{action?.location}</td>
@@ -537,7 +555,7 @@ const Advertisement = () => {
                             <div className="flex items-center justify-center py-5 ">
 
                                 <form action="" className="lg:flex ">
-                                <div className="w-full grid grid-cols-2 gap-5">
+                                    <div className="w-full grid grid-cols-2 gap-5">
 
                                         <div className="mb-2">
                                             <label className=" block text-base font-medium  text-[#07074D]">
@@ -587,7 +605,7 @@ const Advertisement = () => {
 
                                         <div className="mb-4">
                                             <label className="block mb-1">Expiry Date:</label>
-                                            <input type="date" name="expiryDate" value={expiryDate?.split("T")[0]} onChange={handleChange} className="w-full rounded-md border border-[#e0e0e0] bg-gray-100 py-3 px-6  text-base font-medium  text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md disabled:cursor-not-allowed"  disabled />
+                                            <input type="date" name="expiryDate" value={expiryDate?.split("T")[0]} onChange={handleChange} className="w-full rounded-md border border-[#e0e0e0] bg-gray-100 py-3 px-6  text-base font-medium  text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md disabled:cursor-not-allowed" disabled />
                                         </div>
 
                                     </div>

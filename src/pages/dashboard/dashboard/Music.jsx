@@ -247,7 +247,7 @@ const Music = () => {
     }
 
     const updateUsers = async () => {
-        if (!name) {
+        if (!music) {
             errorMessage('Enter Proper Name 😓')
             return
         }
@@ -261,7 +261,7 @@ const Music = () => {
         setLoader(true)
         try {
             const payload = {
-                name,
+                music,
                 // email,
                 // phone,
                 // // password,
@@ -315,6 +315,7 @@ const Music = () => {
             musicName: "",
             singerName: ""
         }))
+        setPostMusic(null)
     }
 
     useEffect(() => {
